@@ -5,10 +5,11 @@ class Ship():
         self.screen=screen
         self.ai_settings=ai_settings
         self.image=pygame.image.load('ship.bmp')
+        self.imagedie=pygame.image.load('explosionmain.bmp')
         self.rect=self.image.get_rect()
         self.screen_rect=screen.get_rect()
         self.rect.centerx=self.screen_rect.centerx
-        self.rect.centery=self.screen_rect.centery
+        self.rect.centery=self.screen_rect.bottom
         self.centerx = float(self.rect.centerx)
         self.centery = float(self.rect.centery)
         self.moving_right=False
@@ -31,6 +32,16 @@ class Ship():
             self.centery+=self.ai_settings.ship_speed_factor
 
 
-        self.rect.centerx=self.centerx
-        self.rect.centery=self.centery
+        self.rect.centerx = self.centerx
+        self.rect.centery = self.centery
+
+    def center_ship(self):
+        self.centerx=self.screen_rect.centerx
+        self.centery=self.screen_rect.bottom
+
+
+
+
+
+
 
